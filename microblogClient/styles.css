@@ -47,6 +47,19 @@ main {
     margin-right: 3px;
 }
 
+.login-btn {
+    position: relative;
+}
+
+.login-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d6efd;
+}
+
 @media only screen and (max-width: 600px) {
     .main-container {
         height: 100vh;

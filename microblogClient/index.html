@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MicroBlog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+
+    <title>MicroBlog - ASP .NET Core Web API Sample</title>
+    <meta name="title" content="MicroBlog - ASP .NET Core Web API Sample">
+    <meta name="description" content="ASP .NET Core 7.0 Web API with basic authentication">
 </head>
 
 <body class="bg-body-tertiary">
@@ -61,7 +64,13 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="LoginPassword" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary login-btn">Login
+                            <div class="login-spinner d-flex justify-content-center align-items-center visually-hidden">
+                                <div class="spinner-border spinner-border-sm text-light" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </button>
                         <button type="button" class="btn" id="SignUpBtn">Create account</button>
                     </form>
                 </div>
