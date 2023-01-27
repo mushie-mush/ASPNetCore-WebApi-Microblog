@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "microblogAPI", "microblogAPI\microblogAPI.csproj", "{241B0096-7A78-4BD4-8DDD-BB5DF2F7D23F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "microblogDB", "microblogDatabase\microblogDB.sqlproj", "{3EF869FB-4B9E-4240-8409-E9F44C130708}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "microblogClient", "microblogClient\", "{E4260652-22F3-481B-B551-62CAE7A94A82}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55793"
+		Debug.AspNetCompiler.PhysicalPath = "microblogClient\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55793\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55793"
+		Release.AspNetCompiler.PhysicalPath = "microblogClient\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55793\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55793"
+		SlnRelativePath = "microblogClient\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{241B0096-7A78-4BD4-8DDD-BB5DF2F7D23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241B0096-7A78-4BD4-8DDD-BB5DF2F7D23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241B0096-7A78-4BD4-8DDD-BB5DF2F7D23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241B0096-7A78-4BD4-8DDD-BB5DF2F7D23F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF869FB-4B9E-4240-8409-E9F44C130708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF869FB-4B9E-4240-8409-E9F44C130708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF869FB-4B9E-4240-8409-E9F44C130708}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3EF869FB-4B9E-4240-8409-E9F44C130708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF869FB-4B9E-4240-8409-E9F44C130708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF869FB-4B9E-4240-8409-E9F44C130708}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E4260652-22F3-481B-B551-62CAE7A94A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4260652-22F3-481B-B551-62CAE7A94A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4260652-22F3-481B-B551-62CAE7A94A82}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4260652-22F3-481B-B551-62CAE7A94A82}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6EBC450-A9F1-4122-A173-28C8AF62D1A2}
+	EndGlobalSection
+EndGlobal
