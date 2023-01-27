@@ -22,10 +22,10 @@ namespace microblog.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            if (GetCurrentUserId() == 0)
-            {
-                return Unauthorized();
-            }
+//             if (GetCurrentUserId() == 0)
+//             {
+//                 return Unauthorized();
+//             }
 
             try
             {
@@ -198,7 +198,7 @@ namespace microblog.Controllers
             {
                 var userClaims = identity.Claims;
 
-                if (userClaims.Count<Claim>() == 0) return 0;
+                //if (userClaims.Count<Claim>() == 0) return 0;
 
                 var nameId = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Sid).Value;
 
