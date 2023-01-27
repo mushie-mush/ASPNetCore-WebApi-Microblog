@@ -21,8 +21,11 @@ const SignUpPassword = document.querySelector("#SignUpPassword");
 
 const LoginEmail = document.querySelector("#LoginEmail");
 const LoginPassword = document.querySelector("#LoginPassword");
+const loginSpinner = document.querySelector(".login-spinner")
 
 const signUpBtn = document.querySelector("#SignUpBtn")
+
+const postLoading = document.querySelector(".post-loading")
 
 const addPostBtn = document.querySelector("#AddButton");
 const postModal = new bootstrap.Modal('#PostModal')
@@ -126,14 +129,28 @@ const createErrorMessage = function (message, parentElement) {
 }
 
 // -----------------------
+// Create loading spinner
+// -----------------------
+
+const createLoadingSpinner = function (parentElement) {
+    const errorElement = `<div class="text-center p-3 post-loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>`
+
+    // Render message to the beginning of parent element
+    parentElement.insertAdjacentHTML("afterbegin", errorElement)
+}
+
+// -----------------------
 // Render all posts
 // -----------------------
 
 const renderAllPost = async function () {
     try {
-        // Clear all post section content
-        allPostContainer.innerHTML = "";
-        myPostContainer.innerHTML = "";
+        // Display loading...
+        createLoadingSpinner(allPostContainer);
 
         // Check stored user data in cookies
         checkAccountValidation();
@@ -141,6 +158,10 @@ const renderAllPost = async function () {
         // Retrieve post from API
         await getAllPost();
         await getMyPost();
+
+        // Clear all post section content
+        allPostContainer.innerHTML = "";
+        myPostContainer.innerHTML = "";
 
         // Render posts to interface
         allPosts.forEach(post => {
@@ -165,6 +186,9 @@ const renderAllPost = async function () {
 // -----------------------
 
 loginForm.addEventListener("submit", async e => {
+    // Display loading spinner
+    loginSpinner.classList.remove("visually-hidden")
+
     e.preventDefault();
 
     // If there is error message then remove it
@@ -180,6 +204,7 @@ loginForm.addEventListener("submit", async e => {
         // Sent login credential to API, if it return TRUE, then close login form
         if (await login(JSON.stringify(userLogin))) LoginModal.hide();
 
+        loginSpinner.classList.add("visually-hidden")
         renderAllPost();
     } catch (error) {
         if (error == 401) {
@@ -190,6 +215,9 @@ loginForm.addEventListener("submit", async e => {
 })
 
 logoutBtn.addEventListener("click", e => {
+    allPostContainer.innerHTML = "";
+    myPostContainer.innerHTML = "";
+
     // Remove user's token from cookies
     logout();
 
@@ -204,6 +232,7 @@ logoutBtn.addEventListener("click", e => {
 signUpBtn.addEventListener("click", () => SignUpModal.show())
 
 signForm.addEventListener("submit", async e => {
+
     e.preventDefault();
 
     try {
