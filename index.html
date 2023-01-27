@@ -61,7 +61,14 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="LoginPassword" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary login-btn">Login
+                            <div
+                                class="login-spinner-bg d-flex justify-content-center align-items-center visually-hidden">
+                                <div class="spinner-border spinner-border-sm text-light login-spinner" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </button>
                         <button type="button" class="btn" id="SignUpBtn">Create account</button>
                     </form>
                 </div>
