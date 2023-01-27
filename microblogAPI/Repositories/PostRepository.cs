@@ -101,7 +101,12 @@ namespace microblog.Repositories
         {
             using (IDbConnection conn = Connection)
             {
-                string likesQuery = @"INSERT INTO likes (PostID, UserID) VALUES (@postId, @userId) WHERE NOT EXISTS ( SELECT * FROM likes WHERE PostID = @postId AND UserID = @userId";
+                string likesQuery = @"
+                INSERT INTO likes(PostID, UserID)
+                SELECT * FROM (SELECT @postId as PostID, @userId AS UserID) AS newValue
+                WHERE NOT EXISTS (
+                    SELECT * FROM likes WHERE PostID = @postId AND UserID = @userId
+                );";
 
                 conn.Open();
                 conn.Execute(likesQuery, new
