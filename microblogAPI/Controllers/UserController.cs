@@ -75,7 +75,7 @@ namespace microblog.Controllers
 
         private object GenerateToken(UserModel user)
         {
-            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:SecretKey"]));
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["SecretKey"]));
             var credential = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
@@ -84,7 +84,7 @@ namespace microblog.Controllers
                 new Claim(ClaimTypes.Name, user.Username)
             };
 
-            var token = new JwtSecurityToken(_config["JWT:Issuer"], _config["JWT:Audience"], claims, expires: DateTime.Now.AddMinutes(_tokenExpiredTime), signingCredentials: credential);
+            var token = new JwtSecurityToken(_config["Issuer"], _config["Audience"], claims, expires: DateTime.Now.AddMinutes(_tokenExpiredTime), signingCredentials: credential);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
